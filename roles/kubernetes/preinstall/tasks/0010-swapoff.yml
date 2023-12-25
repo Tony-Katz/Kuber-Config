@@ -1,0 +1,8 @@
+---
+- name: Mask swap.target (persist swapoff)
+  ansible.builtin.systemd_service:
+    name: swap.target
+    masked: true
+
+- name: Disable swap
+  command: /sbin/swapoff -a
